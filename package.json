@@ -1,0 +1,26 @@
+{
+  "name": "data-source-interaction",
+  "version": "0.0.1",
+  "author": {
+    "name": "linmadan",
+    "email": "772181827@qq.com"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --recursive"
+  },
+  "dependencies": {
+    "co": "^4.6.0",
+    "gridvo-common-js": "0.0.14",
+    "kafka-node": "^1.3.0",
+    "pomelo": "^2.0.0",
+    "rest": "^2.0.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "express": "^4.14.0",
+    "mocha": "^3.2.0",
+    "mqtt": "^2.2.1",
+    "muk": "^0.5.3",
+    "should": "^11.1.2"
+  }
+}
