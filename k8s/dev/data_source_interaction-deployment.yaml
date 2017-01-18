@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: data-source-interaction
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: data-source-interaction
+    spec:
+      containers:
+      - name: data-source-interaction
+        image: 10.0.2.62:5000/gridvo/data-source-interaction:dev
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3150
+        - containerPort: 3011
+        env:
+        - name: ZK_TRACER_HTTP
+          value: "true"             

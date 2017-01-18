@@ -1,9 +1,0 @@
-{
-  "name": "see",
-  "version": "0.0.1",
-  "private": false,
-  "dependencies": {
-    "express": "4.10.2",
-    "serve-static": "1.10.0"
-  }
-}
