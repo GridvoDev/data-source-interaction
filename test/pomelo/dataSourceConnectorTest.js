@@ -14,11 +14,6 @@ describe('pomelo data source connector use case test', ()=> {
                     done();
                 });
             });
-            after(done=> {
-                client.end(()=> {
-                    done();
-                })
-            });
         });
     });
     describe('mqtt client publish topic', ()=> {
