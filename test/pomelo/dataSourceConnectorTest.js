@@ -4,18 +4,6 @@ const _ = require('underscore');
 const should = require('should');
 
 describe('pomelo data source connector use case test', ()=> {
-    describe('mqtt client subscribe topic', ()=> {
-        context('mqtt client subscribe ${dataSourceID} topic', ()=> {
-            let client;
-            it('data source is invalid then client no happen,server is log', done=> {
-                client = mqtt.connect('mqtt://127.0.0.1:3011');
-                client.on('connect', ()=> {
-                    client.subscribe('no-data-source');
-                    done();
-                });
-            });
-        });
-    });
     describe('mqtt client publish topic', ()=> {
         context('public a error topic', ()=> {
             let client;
@@ -41,7 +29,7 @@ describe('pomelo data source connector use case test', ()=> {
                     t: (new Date()).getTime()
                 });
                 client.on('connect', ()=> {
-                    client.publish('rd/no-data-source', payload);
+                    client.publish('no-data-source', payload);
                     done();
                 });
             });

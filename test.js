@@ -1,6 +1,6 @@
 const mqtt = require('mqtt');
 
-let client = mqtt.connect('mqtt://10.0.3.31:3011');
+let client = mqtt.connect('mqtt://117.27.142.62:61643');
 
 client.on('connect', () => {
     let payload = JSON.stringify({
