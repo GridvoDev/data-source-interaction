@@ -1,12 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
+  labels:
+    name: data-source-interaction
   name: data-source-interaction
+  namespace: gridvo
 spec:
   selector: 
-    app: data-source-interaction
+    name: data-source-interaction
   type: NodePort
   ports:
      - port: 3011
        targetPort: 3011
-       nodePort: 3011
+       nodePort: 31014
