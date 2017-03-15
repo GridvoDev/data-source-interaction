@@ -1,17 +1,20 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
+  labels:
+    name: data-source-interaction
   name: data-source-interaction
+  namespace: gridvo
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: data-source-interaction
+        name: data-source-interaction
     spec:
       containers:
       - name: data-source-interaction
-        image: 10.0.2.62:5000/gridvo/data-source-interaction:dev
+        image: 10.0.3.31:5000/gridvo/data-source-interaction:dev
         imagePullPolicy: Always
         ports:
         - containerPort: 3150
