@@ -8,7 +8,7 @@ RUN ["npm","install","--save","kafka-node@1.4.0"]
 RUN ["npm","install","--save","rest@2.0.0"]
 RUN ["npm","install","--save","pomelo@2.2.5"]
 RUN ["npm","install","--save","underscore@1.8.3"]
-RUN ["npm","install","--save","gridvo-common-js@0.0.19"]
+RUN ["npm","install","--save","gridvo-common-js@0.0.21"]
 RUN ["npm","install","pomelo@2.2.5","-g"]
 COPY ./lib lib
 VOLUME ["/home/data-source-interaction"]

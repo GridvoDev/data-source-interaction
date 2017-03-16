@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "co": "^4.6.0",
-    "gridvo-common-js": "0.0.19",
+    "gridvo-common-js": "0.0.21",
     "kafka-node": "^1.4.0",
     "pomelo": "^2.2.5",
     "rest": "^2.0.0",
