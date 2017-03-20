@@ -20,6 +20,18 @@ spec:
         - containerPort: 3150
         - containerPort: 3011
         env:
+        - name: DATA_COLLECT_SERVICE_HOST
+          value: "data-collect"
+        - name: DATA_COLLECT_SERVICE_PORT
+          value: "80"
+        - name: ZOOKEEPER_SERVICE_HOST
+          value: "zookeeper"
+        - name: ZOOKEEPER_SERVICE_PORT
+          value: "2181"
+        - name: ZIPKIN_SERVICE_HOST
+          value: "zipkin"
+        - name: ZIPKIN_HTTP_TRANSPORT_PORT
+          value: "9411"
         - name: ZK_TRACER_HTTP
           value: "true"             
         - name: IS_DEBUG
