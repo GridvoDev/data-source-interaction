@@ -59,7 +59,7 @@ describe('parse util unit test', () => {
                     dataSourceID: "GF-FZMHQJT-FWJ"
                 }
                 let mqttTopic = parseDataSourceUpdateMqttTopicFromKafka(dataSourceConfigTopicMessage);
-                mqttTopic.should.eql("/rt/GF/FZMHQJT/FWJ/update");
+                mqttTopic.should.eql("/rt/GF/FZMHQJT/FWJ/config");
             });
         });
     });
