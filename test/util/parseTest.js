@@ -5,7 +5,8 @@ const {
     parseOriginalDataFromMqttData,
     parseDataSourceIDFromTopic,
     parseActionFromTopic,
-    parseConfigUpdateResultFromMqttData
+    parseConfigUpdateResultFromMqttData,
+    parseDataSourceUpdateMqttTopicFromKafka
 } = require('../../lib/util/parse');
 
 describe('parse util unit test', () => {
@@ -25,7 +26,6 @@ describe('parse util unit test', () => {
     });
     describe('parseOriginalDataFromMqttData(mqttData)', () => {
         context('parse original data from mqtt data', () => {
-            let client;
             it('is ok', () => {
                 let mqttData = {
                     topic: "/rt/GF/FZMHQJT/FWJ/publish",
@@ -40,7 +40,6 @@ describe('parse util unit test', () => {
     });
     describe('parseConfigUpdateResultFromMqttData(mqttData)', () => {
         context('parse update result from mqtt data', () => {
-            let client;
             it('is ok', () => {
                 let mqttData = {
                     topic: "/rt/GF/FZMHQJT/FWJ/publish",
@@ -53,5 +52,15 @@ describe('parse util unit test', () => {
             });
         });
     });
-})
-;
+    describe('parseDataSourceUpdateMqttTopicFromKafka(dataSourceConfigTopicMessage)', () => {
+        context('parse mqtt topic from kafka message', () => {
+            it('is ok', () => {
+                let dataSourceConfigTopicMessage = {
+                    dataSourceID: "GF-FZMHQJT-FWJ"
+                }
+                let mqttTopic = parseDataSourceUpdateMqttTopicFromKafka(dataSourceConfigTopicMessage);
+                mqttTopic.should.eql("/rt/GF/FZMHQJT/FWJ/update");
+            });
+        });
+    });
+});
